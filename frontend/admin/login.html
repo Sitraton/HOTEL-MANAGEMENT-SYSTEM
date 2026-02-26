@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Login | HotelMS</title>
+  <link rel="stylesheet" href="../css/styles.css?v=9" />
+</head>
+<body class="admin-auth-page">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./login.html">
+        <span class="logo" aria-hidden="true"></span>
+        <span>HotelMS Admin</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container admin-auth-main">
+    <section class="admin-auth-card">
+      <h1 class="h1">Admin Login</h1>
+      <p class="p">Sign in to manage reservations.</p>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="admin@hotel.com" />
+      </div>
+
+      <div class="field admin-auth-field">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="********" />
+      </div>
+
+      <div class="admin-auth-actions">
+        <button id="btnLogin" class="btn btn-primary" type="button">Login</button>
+      </div>
+
+      <div id="statusBox" class="notice is-hidden"></div>
+      <button id="btnLogout" class="btn btn-ghost admin-auth-logout" type="button">Clear session</button>
+    </section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/admin-login.js"></script>
+</body>
+</html>
+
+

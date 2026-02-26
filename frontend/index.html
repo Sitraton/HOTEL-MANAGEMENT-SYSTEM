@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HotelMS | Home</title>
+  <link rel="stylesheet" href="css/styles.css?v=9" />
+</head>
+<body class="home-page home-page-layout">
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <span>HotelMS</span>
+      </a>
+      <nav class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="reservations.html">Reservations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container home-main">
+    <section class="home-hero">
+      <article class="hero-card home-intro">
+        <h1 class="h1" id="hotelName">HotelMS</h1>
+        <p class="p" id="hotelTagline">Manage rooms and reservations with a clean, modern interface.</p>
+
+        <div class="home-cta">
+          <a class="btn btn-primary" href="rooms.html">Browse Rooms</a>
+          <a class="btn" href="rooms.html#availability">Check Availability</a>
+          <a class="btn" href="reservations.html">Reservations</a>
+        </div>
+
+        <div id="homeStatus" class="notice home-status is-hidden"></div>
+      </article>
+
+      <aside class="panel home-stats">
+        <div class="section-title section-title-tight">
+          <h2>Live Stats</h2>
+          <p>Auto refresh</p>
+        </div>
+
+        <div class="home-stats-grid">
+          <div class="home-stat">
+            <div class="small">Total rooms</div>
+            <div class="home-stat-value" id="statTotalRooms">&mdash;</div>
+          </div>
+
+          <div class="home-stat">
+            <div class="small">Available rooms</div>
+            <div class="home-stat-value" id="statAvailableRooms">&mdash;</div>
+          </div>
+
+          <div class="home-stat">
+            <div class="small">Active reservations</div>
+            <div class="home-stat-value" id="statActiveReservations">&mdash;</div>
+          </div>
+
+          <div class="home-stat">
+            <div class="small">Pending / Confirmed</div>
+            <div class="home-stat-pair"><span id="statPending">&mdash;</span> / <span id="statConfirmed">&mdash;</span></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="panel home-details">
+      <div class="section-title section-title-tight">
+        <h2>Hotel Details</h2>
+        <p>Contact and policy</p>
+      </div>
+
+      <div class="home-detail-grid">
+        <div class="home-detail-item">
+          <div class="small">Location</div>
+          <div id="hotelLocation">Dar es Salaam, Tanzania</div>
+        </div>
+
+        <div class="home-detail-item">
+          <div class="small">Phone</div>
+          <div id="hotelPhone">+255 700 000 000</div>
+        </div>
+
+        <div class="home-detail-item">
+          <div class="small">Email</div>
+          <div id="hotelEmail">info@hotelms.test</div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; <span id="year"></span> HotelMS</div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+

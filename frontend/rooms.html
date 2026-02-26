@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rooms | HotelMS</title>
+  <link rel="stylesheet" href="css/styles.css?v=9" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <span>HotelMS</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="rooms.html">Rooms</a>
+        <a href="reservations.html">Reservations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="h1">Rooms</h1>
+        <p class="p">Browse all rooms or check availability for your travel dates.</p>
+      </div>
+    </section>
+
+    <section id="availability" class="panel">
+      <div class="section-title">
+        <h2>Search</h2>
+        <p>Filters + availability</p>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="type">Room Type</label>
+          <select id="type">
+            <option value="">All</option>
+            <option value="single">Single</option>
+            <option value="double">Double</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="suite">Suite</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="checkIn">Check-in</label>
+          <input id="checkIn" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="checkOut">Check-out</label>
+          <input id="checkOut" type="date" />
+        </div>
+
+        <div class="field">
+          <label>&nbsp;</label>
+          <button id="btnSearch" class="btn btn-primary" type="button">Search</button>
+        </div>
+      </div>
+
+      <div class="hero-actions mt-12">
+        <button id="btnShowAll" class="btn" type="button">Show all rooms</button>
+      </div>
+
+      <div id="statusBox" class="notice is-hidden"></div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Results</h2>
+        <p id="resultMeta">Loading...</p>
+      </div>
+
+      <div id="roomsGrid" class="grid grid-rooms"></div>
+    </section>
+
+    <div class="spacer-28"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; <span id="year"></span> HotelMS</div>
+  </footer>
+
+    <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true"></div>
+
+  <div id="bookingModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2 id="modalTitle" class="modal-title">Book Room</h2>
+          <p class="modal-sub">Fill in your details to book this room.</p>
+        </div>
+        <button id="btnCloseModal" class="icon-btn" type="button" aria-label="Close">x</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="notice mt-0">
+          <strong>Selected:</strong>
+          <span id="selectedRoomText">&mdash;</span>
+        </div>
+
+        <div class="form-row form-row-2 mt-12">
+          <div class="field">
+            <label for="guestName">Guest Name</label>
+            <input id="guestName" type="text" placeholder="e.g. John Doe" />
+          </div>
+
+          <div class="field">
+            <label for="guestPhone">Phone</label>
+            <input id="guestPhone" type="text" placeholder="e.g. 0712345678" />
+          </div>
+
+          <div class="field">
+            <label for="guestEmail">Email (optional)</label>
+            <input id="guestEmail" type="email" placeholder="e.g. john@example.com" />
+          </div>
+
+          <div class="field">
+            <label for="adults">Adults</label>
+            <input id="adults" type="number" min="1" value="1" />
+          </div>
+
+          <div class="field">
+            <label for="children">Children</label>
+            <input id="children" type="number" min="0" value="0" />
+          </div>
+
+          <div class="field">
+            <label for="modalCheckIn">Check-in</label>
+            <input id="modalCheckIn" type="date" />
+          </div>
+
+          <div class="field">
+            <label for="modalCheckOut">Check-out</label>
+            <input id="modalCheckOut" type="date" />
+          </div>
+
+          <div class="field is-hidden">
+            <label for="selectedRoomId">Room ID</label>
+            <input id="selectedRoomId" type="text" />
+          </div>
+        </div>
+
+        <div id="modalStatus" class="notice is-hidden"></div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btnCancelModal" class="btn" type="button">Cancel</button>
+        <button id="btnConfirmBooking" class="btn btn-primary" type="button">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/rooms.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reservations | HotelMS</title>
+  <link rel="stylesheet" href="css/styles.css?v=9" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span>
+        <span>HotelMS</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a class="active" href="reservations.html">Reservations</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="h1">Reservations</h1>
+        <p class="p">View, filter, and cancel reservations.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <h2>Filters</h2>
+        <p>Keep it simple</p>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status">
+            <option value="">All</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="cancelled">Cancelled</option>
+            <option value="checked_in">Checked in</option>
+            <option value="checked_out">Checked out</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="from">From (check-in)</label>
+          <input id="from" type="date" />
+        </div>
+
+        <div class="field">
+          <label for="to">To (check-out)</label>
+          <input id="to" type="date" />
+        </div>
+
+        <div class="field">
+          <label>&nbsp;</label>
+          <button id="btnApply" class="btn btn-primary" type="button">Apply</button>
+        </div>
+      </div>
+
+      <div class="hero-actions mt-12">
+        <button id="btnClear" class="btn" type="button">Clear</button>
+      </div>
+
+      <div id="statusBox" class="notice is-hidden"></div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>List</h2>
+        <p id="metaText">Loading...</p>
+      </div>
+
+      <div id="list" class="grid list-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; <span id="year"></span> HotelMS</div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/reservations.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
